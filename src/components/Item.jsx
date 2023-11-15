@@ -3,7 +3,7 @@ export const Items = ({ item }) => {
     return (
             <div className="p-4 md:w-1/3">
                 <div className="h-full border-2 border-gray-400 border-opacity-60 overflow-hidden">
-                    <img className="lg:h-80 md:h-36 w-full object-cover object-center" src={`../${item.image.one}`} alt={`${item.category} ${item.brand} ${item.model}`} />
+                    <img className="lg:h-80 md:h-36 w-full object-cover object-center" src={`../${item.image.one}`} alt={`${item.category} ${item.brand} modelo ${item.model}`} />
                     <div className="p-6">
                         <h2 className="tracking-widest text-lg title-font font-medium text-gray-800 mb-1">Categoria: {item.category}</h2>
                         <h1 className="title-font text-xl font-medium text-gray-800 mb-3 mt-3">Marca: {item.brand}</h1>

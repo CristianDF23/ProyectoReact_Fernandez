@@ -6,7 +6,7 @@ export const ItemDetail = ({ item }) => {
                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
                     <Car item={item}/>
                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                        <h2 className="text-sm title-font text-gray-500 tracking-widest">{`${item.category} ${item.brand}`} </h2>
+                        <h2 className="text-sm title-font text-xl text-gray-500 tracking-widest">{`${item.category} ${item.brand}`} </h2>
                         <h1 className="text-gray-900 text-3xl title-font font-medium mb-6 mt-4">{item.model}</h1>
                         <h3 className="leading-relaxed">{item.description}</h3>
                         <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">

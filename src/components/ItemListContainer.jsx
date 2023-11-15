@@ -32,7 +32,7 @@ export const ItemsListContainer = (props) => {
         <main>
             <h1 className="text-center mt-4 text-3xl">Bienvenidos a <span className="font-bold text-purple-600">{props.greeting}</span></h1>
             <section className="flex flex-wrap container px-5 py-24 mx-auto">
-                <ItemList items={items} />
+            {items ? <ItemList items={items}/>: <>Loading...</>}
             </section>
         </main>
     )

@@ -8,16 +8,41 @@ export const CartProvider = ({ children }) => {
 
     const clear = () => setItems([]);
 
-    const onAdd = (item) => {
-        setItems((prev) => {
-            return [...prev, item]
-        })
+    const onAdd = (item, quantity) => {
+        const exist = items.some((i) => i.id === item.id)
+
+        if (exist) {
+            const updateItems = items.map((i) => {
+                if (i.id === item.id) {
+                    return {
+                        ...i,
+                        quantity: i.quantity + quantity,
+                    };
+                } else {
+                    return i;
+                }
+            });
+            setItems(updateItems)
+        } else {
+            setItems((prev) => {
+                return [...prev, { ...item, quantity }]
+            });
+        }
     }
 
-    const longitud = items.length
+    const onRemove = (id) => {
+        const filterItems = items.filter((item) => item.id !== id);
+        setItems(filterItems)
+    };
+    
+    const filtroCategory = items.map(item => item.category)
+    
+    const unificarCategory = new Set(filtroCategory)
+
+    const total = items.reduce((acumulador, valorActual) => acumulador + (valorActual.quantity * valorActual.price), 0);
 
     return (
-        <CartContext.Provider value={{ items, clear, onAdd, longitud }}>
+        <CartContext.Provider value={{ items, clear, onAdd, onRemove, total, unificarCategory }}>
             {children}
         </CartContext.Provider>
     );

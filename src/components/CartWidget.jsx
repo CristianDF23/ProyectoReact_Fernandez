@@ -9,13 +9,14 @@ import { Badge } from 'flowbite-react';
 
 export const CartWidget = () => {
 
-    const {longitud} = useContext(CartContext)
-
+    const {items} = useContext(CartContext)
+    
+    const total = items.reduce((acumulador, valorActual) => acumulador + valorActual.quantity, 0);
     return (
         <Link to="/cart">
         <button className='flex flex-row-reverse'>
             <Badge className='justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full dark:border-gray-900'>
-                {longitud}
+                {total}
             </Badge>
             <HiShoppingBag className='w-7 h-7'/>
         </button>

@@ -75,7 +75,7 @@ export const Cart = () => {
                         </div>
                         <div className="flex justify-between">
                             <h2 className="text-indigo-400 font-bold">Impuesto (I.V.A)</h2>
-                            <h3 className="text-indigo-400 font-bold">{iva} %</h3>
+                            <h3 className="text-indigo-400 font-bold">21%</h3>
                         </div>
                         <hr />
                     </div>
